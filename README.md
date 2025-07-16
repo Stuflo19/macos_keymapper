@@ -27,7 +27,7 @@ To set the app as a background process simply add the following into a file name
     <string>com.stuflo.macoskeymapper</string>
     <key>ProgramArguments</key>
     <array>
-      <string>/Users/stu/GolandProjects/macos_keymapper/macos_keymapper</string>
+      <string>/path/to/macos_keymapper</string>
     </array>
     <key>RunAtLoad</key>
     <true/>

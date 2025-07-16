@@ -6,8 +6,6 @@ import (
 	"os"
 )
 
-const configFileLocation string = "/Users/stu/.config/macos_keymapper/config.json"
-
 type Parser struct {
 	hotkeyItems []HotkeyItem
 }
@@ -19,6 +17,12 @@ func NewParser() *Parser {
 }
 
 func (p *Parser) ParseConfigFile() {
+	homeDir, err := os.UserHomeDir()
+	if err != nil {
+		log.Fatal(err)
+	}
+	configFileLocation := homeDir + "/.config/macos_keymapper/config.json"
+
 	contents, err := os.ReadFile(configFileLocation)
 
 	if err != nil {
