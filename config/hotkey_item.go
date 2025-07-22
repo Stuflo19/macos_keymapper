@@ -43,9 +43,11 @@ func (h HotkeyItem) getHotkey() *hotkey.Hotkey {
 }
 
 func (h HotkeyItem) SetupChannel(hk *hotkey.Hotkey) {
-	select {
-	case <-hk.Keydown():
-		h.LaunchApplication()
+	for {
+		select {
+		case <-hk.Keydown():
+			h.LaunchApplication()
+		}
 	}
 }
 
